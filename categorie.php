@@ -2,11 +2,14 @@
 require_once './partials/header.php';
 require_once './partials/nav.php';
 //print_r($_GET) permet de récupérer le param de l'url dans cette super global.
+
+# $category = isset($_GET['name']) ? $_GET['name'] : 'Politique'; // Condition Ternaire
+$category = $_GET['name'] ?? 'Politique';  // Condition Ternaire Réduite
 ?>
 
     <!--Titre de la page -->
     <div class="p-3 mx-auto text-center">
-        <h1 class="display-4"><?= $_GET['name'] ?></h1>
+        <h1 class="display-4"><?= $category?></h1>
     </div>
     <!--Contenu de la page-->
     <div class="py-5 bg-light">

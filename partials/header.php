@@ -1,6 +1,6 @@
 <?php
     #importation des fonctions de notre site
-    require_once'functions/categorie.php';
+    require_once'functions/categorie.function.php';
 ?>
 
 <!doctype html>
