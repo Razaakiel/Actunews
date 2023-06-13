@@ -9,27 +9,13 @@
             <div class="col-6 col-md pt-2">
                 <h5>Catégories</h5>
                 <ul class="list-unstyled">
-                    <li>
-                        <a href="#" class="text-muted">Politique</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-muted">Economie</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-muted">Social</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-muted">Sport</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-muted">Technologie</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-muted">Culture</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-muted">Loisirs</a>
-                    </li>
+                    <?php foreach ($categories as $category) { ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="categorie.php?name=<?= $category['slug'] ?>">
+                                <?= $category['name'] ?>
+                            </a>
+                        </li>
+                    <?php } ?>
                 </ul>
             </div>
             <div class="col-6 col-md pt-2">
