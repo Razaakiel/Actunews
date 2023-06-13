@@ -25,6 +25,11 @@ $posts = getPostsByCategory($category['id']);
 <div class="py-5 bg-light">
     <div class="container">
         <div class="row">
+            <?php if (empty($posts)) { ?>
+                <div class="alert alert-info">
+                    Pas d'article dans cette catégorie.
+                </div>
+            <?php } ?>
             <?php foreach ($posts as $post) : ?>
                 <div class="col-md-4 mt-4">
                     <div class="card shadow-sm">
@@ -35,7 +40,7 @@ $posts = getPostsByCategory($category['id']);
                             <div class="card-text"><?= summarize($post['content'], 150) ?></div>
                             <div class="d-flex justify-content-between align-items-center">
                                 <small class="text-muted"><?= $post['firstname'] ?> <?= $post['lastname'] ?></small>
-                                <a href="#" class="btn btn-dark">
+                                <a href="article.php?slug=<?= $post['postSlug'] ?>" class="btn btn-dark">
                                     Lire la suite
                                 </a>
                             </div>
