@@ -25,8 +25,8 @@
             </ul>
             <!--Btn Connexion / Inscription-->
             <div class="text-right">
-                <a href="#" class="nav-item btn btn-outline-info">Connexion</a>
-                <a href="#" class="nav-item btn btn-outline-warning mx-2">Inscription</a>
+                <a href="connexion.php" class="nav-item btn btn-outline-info">Connexion</a>
+                <a href="inscription.php" class="nav-item btn btn-outline-warning mx-2">Inscription</a>
             </div>
         </div>
     </div>

@@ -10,6 +10,9 @@ require_once './partials/nav.php'
         <h1 class="display-4">Connexion</h1>
     </div>
     <!--Contenu de la page-->
+<?php
+    require_once './partials/form_connexion.php'
+?>
     <!--Pied de page-->
 <?php
 require_once './partials/footer.php'
