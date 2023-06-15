@@ -3,16 +3,15 @@
 
 # Importation du header
 require_once 'partials/header.php';
-
 # Récupération des articles
 $posts = getPosts(6);
-
 ?>
 
 <!-- TITRE DE LA PAGE -->
 <div class="p-3 mx-auto text-center">
     <h1 class="display-4">Actunews</h1>
 </div>
+
 
 <!-- CONTENU DE LA PAGE -->
 <div class="py-5 bg-light">

@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+var_dump($_SESSION['user']);
 # Importation des constantes
 require_once 'config/config.php';
 
@@ -10,6 +11,7 @@ require_once 'config/database.php';
 require_once 'functions/global.function.php';
 require_once 'functions/categorie.function.php';
 require_once 'functions/post.function.php';
+require_once 'functions/user.function.php';
 ?>
 
 <!doctype html>
