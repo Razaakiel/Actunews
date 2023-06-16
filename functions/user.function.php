@@ -63,8 +63,8 @@ if(!empty(isset($_POST['email'])) && !empty(isset($_POST['password']))){
     $resultLogin = checkUserLogin($_POST['email'], $_POST['password']);
     if(!empty($resultLogin)){
         $isConnected = true;
-        $_SESSION['user'] = $resultLogin['firstname'];
-
+        $_SESSION['user'] = $resultLogin['id'];
+        header('location: index.php');
     }
 }
 
@@ -85,3 +85,31 @@ function checkUserLogin($email, $password){
     $query -> execute();
     return $query -> fetch();
 }
+
+/*
+ * ************************************************************************************************
+ * ******************************************PROFIL*********************************************
+ * ************************************************************************************************
+ * */
+
+function getInfoUser($id){
+    global $dbh;
+
+    $sql = 'SELECT * FROM user WHERE id = :id';
+    $query = $dbh -> prepare($sql);
+    $query -> bindValue(':id', $id);
+    $query -> execute();
+    return $query -> fetch();
+}
+//function getInfoUser($firstname, $lastname, $email, $password){
+//    global $dbh;
+//
+//    $sql = 'SELECT * FROM user WHERE firstname = :firstname AND lastname = :lastname AND email = :email AND password = :password';
+//    $query = $dbh -> prepare($sql);
+//    $query -> bindValue(':firstname', $firstname);
+//    $query -> bindValue(':lastname', $lastname);
+//    $query -> bindValue(':email', $email);
+//    $query -> bindValue(':password', $password);
+//    $query -> execute();
+//    return $query -> fetch();
+//}

@@ -11,7 +11,7 @@ require_once './partials/nav.php'
     </div>
     <!--Contenu de la page-->
 <?php
-    require_once './partials/form_connexion.php'
+    require_once './partials/form_connexion.php';
 ?>
     <!--Pied de page-->
 <?php

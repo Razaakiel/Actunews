@@ -1,6 +1,5 @@
 <?php
 session_start();
-var_dump($_SESSION['user']);
 # Importation des constantes
 require_once 'config/config.php';
 

@@ -1,6 +1,7 @@
 <?php
     # -- Récupération des catégories
     $categories = getCategories();
+//    var_dump($_SESSION['user']);
 //    print_r($categories)
 ?>
 
@@ -24,10 +25,17 @@
                 <?php } ?>
             </ul>
             <!--Btn Connexion / Inscription-->
-            <div class="text-right">
-                <a href="connexion.php" class="nav-item btn btn-outline-info">Connexion</a>
-                <a href="inscription.php" class="nav-item btn btn-outline-warning mx-2">Inscription</a>
-            </div>
+            <?php if(!isset($_SESSION['user'])) : ?>
+                <div class="text-right">
+                    <a href="connexion.php" class="nav-item btn btn-outline-info">Connexion</a>
+                    <a href="inscription.php" class="nav-item btn btn-outline-warning mx-2">Inscription</a>
+                </div>'
+            <?php else : ?>
+                <div class="text-right">
+                    <a href="profil.php" class="nav-item btn btn-outline-info">Profil</a>
+                    <a href="deconnect.php" class="nav-item btn btn-outline-warning">Déconnecter</a>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 </nav>
