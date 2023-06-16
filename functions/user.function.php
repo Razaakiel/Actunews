@@ -1,5 +1,10 @@
 <?php
 
+/*
+ * ************************************************************************************************
+ * ****************************************INSCRIPTION*********************************************
+ * ************************************************************************************************
+ * */
 if (!empty(isset($_POST['firstname'])) && !empty(isset($_POST['lastname'])) && !empty(isset($_POST['email'])) && !empty(isset($_POST['password']))) {
     $result = checkUserExist($_POST['email']);
     if (empty($result)){
@@ -63,7 +68,12 @@ if(!empty(isset($_POST['email'])) && !empty(isset($_POST['password']))){
     }
 }
 
-
+/**
+ * @param $email
+ * @param $password
+ * @return mixed
+ * Je verifie si l'utilisateur est bien dans ma BDD
+ */
 function checkUserLogin($email, $password){
     global $dbh;
 
